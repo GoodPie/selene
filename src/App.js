@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css';
 import { messages } from './messages';
 
@@ -7,10 +7,22 @@ function App() {
 
 
   const [language, setLanguage] = useState("es");
+  const [answer, setAnswer] = useState(null);
+  const finalRef = useRef(null);
+
+  const finalizeAnswer = (response) => {
+    setAnswer(response); 
+
+    setTimeout(() => {
+      finalRef.current.scrollIntoView({behavior: "smooth"});
+    }, 100)
+    
+  }
+
 
   return (
 
-    
+
     <div className="App">
 
       <div id="introduction" className="fullscreen">
@@ -29,7 +41,6 @@ function App() {
         </div>
       </div>
 
-      
       <div id="step-three" className="fullscreen">
         <div className="center flex-column">
           <span className="fancy-font">
@@ -37,21 +48,57 @@ function App() {
           </span>
 
           <div id="button-container">
-            <button className='button'>{messages["yes"][language]}</button>
-            <button className='button'>{messages["no"][language]}</button>
+            <button className='button' onClick={() => finalizeAnswer("yes")}>{messages["yes"][language]}</button>
+            <button className='button' onClick={() => finalizeAnswer("no")}>{messages["no"][language]}</button>
           </div>
 
 
         </div>
       </div>
 
-    <div id="language-selector">
-      <span onClick={() => {setLanguage("en")}}>EN</span>|
-      <span onClick={() => {setLanguage("es")}}>ES</span>
-    </div>
+      <div ref={finalRef}>
+        {
+          answer === "yes" ?
+
+            <div id="step-success" className="fullscreen">
+              <div className="center flex-column">
+                <span id="emoji-container">
+                  🥰
+                </span>
+
+                <div className="fancy-font">
+                  <span>{messages["success"][language]}</span>
+                </div>
+              </div>
+            </div> : <></>
+        }
+
+        {
+          answer === "no" ?
+
+            <div id="step-success" className="fullscreen">
+              <div className="center flex-column">
+                <span id="emoji-container">
+                  😵
+                </span>
+
+                <div className="fancy-font">
+                  <span>{messages["fail"][language]}</span>
+                </div>
+              </div>
+            </div> : <></>
+        }
+
+      </div>
+
+
+      <div id="language-selector">
+        <span onClick={() => { setLanguage("en") }}>EN</span>|
+        <span onClick={() => { setLanguage("es") }}>ES</span>
+      </div>
 
     </div>
-    
+
 
   );
 }
