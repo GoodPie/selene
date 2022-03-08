@@ -29,6 +29,10 @@ code {
   
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .fancy-font {
   font-family: 'Ephesis', cursive;
 }
@@ -41,6 +45,12 @@ code {
 
 #step-two .center {
   background: #7A5C61;
+  color: white;
+  height: 100vh;
+}
+
+#step-three .center {
+  background: #463336;
   color: white;
   height: 100vh;
 }
@@ -71,6 +81,20 @@ code {
   transition: all 0.2s ease-in-out;
 }
 
+.button {
+  background-color: #C8AEB2;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background-color: #EEDEE1;
+  border: none;
+  transition: all 0.2s;
+}
+
+
 
 @media (max-width: 576px) { 
 
@@ -83,6 +107,11 @@ code {
     padding: 0 5rem;
   }
 
+  #step-three .center {
+    font-size: 2rem;
+    padding: 0 5rem;
+  }
+
   #language-selector {
     font-size: 1.5rem;
 
@@ -90,6 +119,18 @@ code {
 
   #language-selector span {
     padding: 10px;
+  }
+
+  .button {
+    padding: 16px;
+    font-size: 1.2rem;
+    margin: 1rem;
+    width: 15rem;
+    border-radius: 20px;
+  }
+
+  #button-container {
+    margin-top: 3rem;
   }
   
 }
@@ -105,6 +146,11 @@ code {
     padding: 0 20rem;
   }
 
+  #step-three .center {
+    font-size: 5rem;
+    padding: 0 20rem;
+  }
+
   
   #language-selector {
     font-size: 3rem;
@@ -113,5 +159,15 @@ code {
   #language-selector span {
     padding: 20px;
   }
+
+  
+  .button {
+    padding: 16px;
+    font-size: 2rem;
+    margin: 2rem;
+    width: 16rem;
+    border-radius: 20px;
+  }
+
 }
 
