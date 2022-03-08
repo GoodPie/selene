@@ -63,11 +63,7 @@ code {
   height: 100vh;
 }
 
-#step-two::selection {
-  background: #F3D9DC;
-}
-
-#step-two::-moz-selection {
+::selection  {
   background: #F3D9DC;
 }
 
@@ -103,6 +99,22 @@ code {
 }
 
 
+#heart-drawing {
+  position: absolute;
+  bottom: 0px;
+  right: -110px;
+  width: 400px;
+  height: 200px;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 8000;
+  animation: dash 10s linear forwards infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
 
 @media (max-width: 576px) { 
 
@@ -187,7 +199,6 @@ code {
     padding: 20px;
   }
 
-  
   .button {
     padding: 16px;
     font-size: 2rem;
