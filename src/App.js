@@ -1,7 +1,9 @@
 
 import React, { useState, useRef } from 'react';
+import { LanguageSelector } from './components/LanguageSelector';
 import './App.css';
 import { messages } from './messages';
+import { HeartDrawing } from './HeartDrawing';
 
 function App() {
 
@@ -92,11 +94,9 @@ function App() {
       </div>
 
 
-      <div id="language-selector">
-        <span onClick={() => { setLanguage("en") }}>EN</span>|
-        <span onClick={() => { setLanguage("es") }}>ES</span>
-      </div>
-
+      {<LanguageSelector setLanguage={setLanguage} />}
+      
+      <HeartDrawing></HeartDrawing>
     </div>
 
 
@@ -104,3 +104,5 @@ function App() {
 }
 
 export default App;
+
+
