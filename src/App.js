@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import { messages } from './messages';
 
@@ -7,10 +7,6 @@ function App() {
 
 
   const [language, setLanguage] = useState("es");
-
-  
-
-
 
   return (
 
