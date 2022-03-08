@@ -72,33 +72,29 @@ code {
 }
 
 
-@media (min-width: 576px) { 
+@media (max-width: 576px) { 
 
   #introduction .center {
-    font-size: 15rem;
+    font-size: 8rem;
   }
 
   #step-two .center {
-    font-size: 1rem;
-    padding: 0 2rem;
+    font-size: 2.5rem;
+    padding: 0 5rem;
   }
 
-  
   #language-selector {
-    font-size: 3rem;
+    font-size: 1.5rem;
+
   }
 
   #language-selector span {
-    padding: 20px;
+    padding: 10px;
   }
   
 }
 
-@media (min-width: 768px) { }
-
-@media (min-width: 992px) { }
-
-@media (min-width: 1200px) {
+@media (min-width: 576px) { 
 
   #introduction .center {
     font-size: 15rem;
@@ -117,7 +113,5 @@ code {
   #language-selector span {
     padding: 20px;
   }
-
 }
 
-@media (min-width: 1400px) { }
